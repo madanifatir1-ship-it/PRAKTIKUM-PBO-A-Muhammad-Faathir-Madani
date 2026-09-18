@@ -1,0 +1,25 @@
+@startuml
+autonumber
+actor Main
+participant "RekeningBank\n(Constructor Ringkas)" as Ringkas
+participant "RekeningBank\n(Constructor Lengkap)" as Lengkap
+
+Main -> Ringkas : new RekeningBank("111", "Ani")
+activate Ringkas
+
+Ringkas -> Lengkap : this("111", "Ani", 0.0)
+activate Lengkap
+
+note over Lengkap
+  1. Validasi nomor tidak kosong
+  2. Validasi saldo awal >= 0
+  3. Set nomor, pemilik, saldo
+  4. jumlahRekening++
+end note
+
+Lengkap --> Ringkas : Objek terbentuk
+deactivate Lengkap
+
+Ringkas --> Main : Objek RekeningBank selesai
+deactivate Ringkas
+@enduml
