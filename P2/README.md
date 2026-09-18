@@ -1,7 +1,7 @@
 # Tugas Praktikum PBO - Pertemuan 2
 
 * **Nama:** Muhammad Faathir Madani
-* **NPM:** [Isi NPM Kamu]
+* **NPM:** 4525210100
 * **Kelas:** Praktikum PBO A
 
 ## Isi Folder P2:
