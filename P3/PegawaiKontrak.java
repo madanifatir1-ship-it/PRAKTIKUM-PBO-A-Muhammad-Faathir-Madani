@@ -7,10 +7,13 @@ public class PegawaiKontrak extends Pegawai {
         this.bulanKontrak = bulanKontrak;
     }
 
+<<<<<<< HEAD
     // TODO 2: pegawai kontrak TIDAK mendapat tunjangan masa kerja.
     //         Apakah method hitungGaji() perlu di-override di sini?
     //         Pikirkan dulu, lalu tuliskan alasannya di catatan.md.
 
+=======
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
     @Override
     public String jenis() { return "KONTRAK"; }
 

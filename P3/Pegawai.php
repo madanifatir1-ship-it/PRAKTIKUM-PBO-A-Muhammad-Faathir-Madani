@@ -13,13 +13,19 @@ abstract class Pegawai
         protected readonly string $nama,
         protected readonly float  $gajiPokok,
     ) {
+<<<<<<< HEAD
         // TODO 1: tolak gaji pokok negatif.
+=======
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
         if ($this->gajiPokok < 0) {
             throw new InvalidArgumentException('Gaji pokok tidak boleh negatif.');
         }
     }
 
+<<<<<<< HEAD
     /** TODO 2: kembalikan gaji pokok apa adanya. */
+=======
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
     public function hitungGaji(): float
     {
         return $this->gajiPokok;
@@ -47,6 +53,7 @@ class PegawaiTetap extends Pegawai
         string $nip, string $nama, float $gajiPokok,
         protected readonly int $masaKerjaTahun,
     ) {
+<<<<<<< HEAD
         // WAJIB. TODO 3 (Langkah 3): hapus sementara baris ini,
         //         jalankan, salin pesan kesalahannya, lalu kembalikan.
         parent::__construct($nip, $nama, $gajiPokok);
@@ -64,6 +71,22 @@ class PegawaiTetap extends Pegawai
         ) * parent::hitungGaji();
 
         return parent::hitungGaji() + $tunjangan;
+=======
+        parent::__construct($nip, $nama, $gajiPokok);
+    }
+
+    public function hitungGaji(): float
+    {
+        $gajiDasar = parent::hitungGaji();
+        $tunjangan = $gajiDasar * self::TUNJANGAN_PER_TAHUN * $this->masaKerjaTahun;
+        $maksimum = $gajiDasar * self::TUNJANGAN_MAKSIMUM;
+
+        if ($tunjangan > $maksimum) {
+            $tunjangan = $maksimum;
+        }
+
+        return $gajiDasar + $tunjangan;
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
     }
 
     public function jenis(): string { return 'TETAP'; }
@@ -116,7 +139,11 @@ class PegawaiHarian extends Pegawai
 
     public function hitungGaji(): float
     {
+<<<<<<< HEAD
         return parent::hitungGaji() * $this->hariKerja;
+=======
+        return $this->gajiPokok * $this->hariKerja;
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
     }
 
     public function jenis(): string { return 'HARIAN'; }

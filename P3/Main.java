@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
+<<<<<<< HEAD
         // TODO Langkah 4: tambahkan Dosen dan PegawaiHarian ke daftar ini
         //                 setelah Anda membuat kelasnya.
         Pegawai[] daftar = {
@@ -8,6 +9,13 @@ public class Main {
             new PegawaiKontrak("K-2024-007", "Budi Santoso", 5_000_000, 12),
             new Dosen("D-2024-001", "Citra Dewi", 7_000_000, 10, 1_500_000),
             new PegawaiHarian("H-2024-003", "Dedi Pratama", 200_000, 20)
+=======
+        Pegawai[] daftar = {
+            new PegawaiTetap("198701012010", "Ani Lestari",  6_000_000, 15),
+            new PegawaiKontrak("K-2024-007",  "Budi Santoso", 5_000_000, 12),
+            new Dosen("D-2024-110", "Citra Dewi", 8_000_000, 11, 1_500_000),
+            new PegawaiHarian("H-2024-220", "Dedi Prasetyo", 250_000, 20)
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
         };
 
         System.out.println("=== Daftar Gaji ===");

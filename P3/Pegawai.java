@@ -14,7 +14,10 @@ public abstract class Pegawai {
     protected final double gajiPokok;
 
     protected Pegawai(String nip, String nama, double gajiPokok) {
+<<<<<<< HEAD
         // TODO 1: tolak gaji pokok negatif.
+=======
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
         if (gajiPokok < 0) {
             throw new IllegalArgumentException("Gaji pokok tidak boleh negatif.");
         }
@@ -25,8 +28,13 @@ public abstract class Pegawai {
     }
 
     /**
+<<<<<<< HEAD
      * TODO 2: perilaku dasar — kembalikan gaji pokok apa adanya.
      *         Turunan akan MENAMBAH, bukan mengganti seluruhnya.
+=======
+     * Perilaku dasar: kembalikan gaji pokok apa adanya.
+     * Turunan akan MENAMBAH, bukan mengganti seluruhnya.
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
      */
     public double hitungGaji() {
         return gajiPokok;
