@@ -19,17 +19,38 @@ public class Main {
         System.out.println("=== Objek menolak data yang melanggar aturan ===");
 
         try {
-            new Mahasiswa("2024004", "Salah Nilai", 150, 80, 80);
+            System.out.println(new Mahasiswa("2024004", "Salah Nilai", 150, 80, 80));
             System.out.println("  MASALAH: nilai 150 seharusnya ditolak!");
         } catch (IllegalArgumentException e) {
             System.out.println("  Ditolak: " + e.getMessage());
         }
 
         try {
-            new Mahasiswa("", "NIM Kosong", 80, 80, 80);
+            System.out.println(new Mahasiswa("", "NIM Kosong", 80, 80, 80));
             System.out.println("  MASALAH: NIM kosong seharusnya ditolak!");
         } catch (IllegalArgumentException e) {
             System.out.println("  Ditolak: " + e.getMessage());
         }
+
+        try {
+            kelas[0].setNilaiTugas(150);
+            System.out.println("  MASALAH: setter seharusnya menolak nilai 150!");
+        } catch (IllegalArgumentException e) {
+            System.out.println("  Ditolak setter: " + e.getMessage());
+        }
+
+        System.out.println();
+        System.out.println("=== Uji peminjaman buku ===");
+        Buku buku = new Buku("978-602-000000-0", "Pemrograman Berorientasi Objek", "Tim Praktikum", 1);
+        buku.pinjam();
+        System.out.println("  Sisa setelah dipinjam: " + buku.getJumlahTersedia());
+        try {
+            buku.pinjam();
+            System.out.println("  MASALAH: buku habis seharusnya tidak dapat dipinjam!");
+        } catch (IllegalStateException e) {
+            System.out.println("  Ditolak: " + e.getMessage());
+        }
+        buku.kembalikan();
+        System.out.println("  Sisa setelah dikembalikan: " + buku.getJumlahTersedia());
     }
 }
