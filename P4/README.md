@@ -1,52 +1,52 @@
-# Laporan Praktikum PBO Pertemuan05
-**Nama          :** Muhammad Faathir Madani
-**NPM           :** 4525210100
-**Mata Kuliah   :** Pemrograman Berorientasi Objek
-## Materi
-Menghitung bangun datar
-Materi: Polimorfisme
-## Screenshot Coding AntiPattern.java
+# Laporan Praktikum PBO - Pertemuan 3
+
+**Nama:** Muhammad Faathir Madani
+**NPM:** 4525210100
+**Kelas:** Praktikum PBO A
+
+
+---
+
+## 1. Implementasi Java
+Berikut adalah dokumentasi kode tiap *class* dan hasil eksekusi program menggunakan Java.
+
+### A. Screenshot Kode Java
+**1. Main.java**
 ![alt text](image.png)
 
-## Screenshot Coding AntiPatternRefaktor.java
+**2. Pegawai.java (Abstract Class)**
 ![alt text](image-1.png)
-
-## Screenshot Coding BangunDatar.java
 ![alt text](image-2.png)
 
-## Screenshot Coding Lingkaran.java
+**3. PegawaiTetap.java**
 ![alt text](image-3.png)
-
-## Screenshot Coding Main.java
 ![alt text](image-4.png)
 
-## Screenshot Coding Persegi.java
+**4. PegawaiKontrak.java**
 ![alt text](image-5.png)
 
-## Screenshot Coding Segitiga.java
+**5. PegawaiHarian.java**
 ![alt text](image-6.png)
 
-## Screenshot Coding Trapesium.java
+**6. Dosen.java**
 ![alt text](image-7.png)
 
-## Hasil Running Program java
+### B. Hasil Running Program Java
 ![alt text](image-8.png)
+---
 
-## Hasil Running Program AntiPattern.java
+## 2. Implementasi PHP
+Berikut adalah dokumentasi kode dan hasil eksekusi program menggunakan PHP.
+
+### A. Screenshot Kode PHP
+**1. main.php**
 ![alt text](image-9.png)
 
-## Hasil Running Program AntiPatternRefaktor.java
+**2. Pegawai.php**
 ![alt text](image-10.png)
-
-## Screenshot Coding Main.php
 ![alt text](image-11.png)
+![alt text](image-12.png)
+![alt text](image-13.png)
 
-## Screenshot Coding BangunDatar.php
+### B. Hasil Running Program PHP
 ![alt text](image-14.png)
-![alt text](image-15.png)
-
-## Screenshot Coding notifikasi.php
-![alt text](image-16.png)
-
-## Hasil Running Program PHP
-![alt text](image-17.png)

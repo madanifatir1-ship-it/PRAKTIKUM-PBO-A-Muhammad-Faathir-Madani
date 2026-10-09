@@ -1,39 +1,37 @@
-/**
- * Program uji.
- * ATURAN LANGKAH 1-2: Anda hanya boleh MENAMBAH baris ke dalam array.
- * Logika perulangan di bawah TIDAK BOLEH diubah sama sekali.
- * Kalau Anda merasa perlu mengubahnya, rancangan Anda belum polimorfik.
- */
 public class Main {
     public static void main(String[] args) {
 
-        // Upcasting: variabel bertipe induk, objek bertipe turunan.
-        BangunDatar[] daftar = {
-            new Lingkaran(7),
-            new Persegi(5),
-            new Segitiga(3, 4, 5),
-            new Trapesium(4, 6, 3, 4, 4)
+<<<<<<< HEAD
+        // TODO Langkah 4: tambahkan Dosen dan PegawaiHarian ke daftar ini
+        //                 setelah Anda membuat kelasnya.
+        Pegawai[] daftar = {
+            new PegawaiTetap("198701012010", "Ani Lestari",  6_000_000, 15),
+            new PegawaiKontrak("K-2024-007", "Budi Santoso", 5_000_000, 12),
+            new Dosen("D-2024-001", "Citra Dewi", 7_000_000, 10, 1_500_000),
+            new PegawaiHarian("H-2024-003", "Dedi Pratama", 200_000, 20)
+=======
+        Pegawai[] daftar = {
+            new PegawaiTetap("198701012010", "Ani Lestari",  6_000_000, 15),
+            new PegawaiKontrak("K-2024-007",  "Budi Santoso", 5_000_000, 12),
+            new Dosen("D-2024-110", "Citra Dewi", 8_000_000, 11, 1_500_000),
+            new PegawaiHarian("H-2024-220", "Dedi Prasetyo", 250_000, 20)
+>>>>>>> eb5ddc216217df4cb98736cbee4168732221a507
         };
 
-        System.out.println("=== Bangun Datar ===");
-        for (BangunDatar b : daftar) {
-            System.out.println("  " + b);
+        System.out.println("=== Daftar Gaji ===");
+        for (Pegawai p : daftar) {
+            System.out.println("  " + p);
         }
 
         double total = 0;
-        for (BangunDatar b : daftar) total += b.luas();
-        System.out.printf("%n  Total luas: %.2f%n", total);
+        for (Pegawai p : daftar) total += p.hitungGaji();
+        System.out.printf("%n  Total beban gaji: Rp%,.2f%n", total);
 
         System.out.println();
-        System.out.println("Periksa: Lingkaran(7) luas = 153,94 ; Persegi(5) luas = 25,00");
-        System.out.println("         Segitiga(3,4,5) luas = 6,00");
+        System.out.println("Periksa: Ani (pokok 6.000.000, masa kerja 15 tahun)");
+        System.out.println("  tunjangan 15 x 2% = 30%, jadi gaji seharusnya Rp7.800.000,00");
 
-        System.out.println();
-        System.out.println("=== Downcasting hanya bila benar-benar perlu ===");
-        for (BangunDatar b : daftar) {
-            if (b instanceof Lingkaran l) {
-                System.out.printf("  %s punya jari-jari %.1f%n", l.getNama(), l.getJariJari());
-            }
-        }
+        // Percobaan Langkah 1: hapus komentar baris berikut, kompilasi, catat pesannya.
+        // Pegawai langsung = new Pegawai("X", "Y", 1000) { public String jenis() { return "?"; } };
     }
 }
