@@ -25,7 +25,11 @@ public class Main {
             System.out.println("  Ditolak: " + e.getMessage());
         }
 
-        b.potongBiayaAdmin();
+        try {
+            b.potongBiayaAdmin();
+        } catch (IllegalStateException e) {
+            System.out.println("Biaya admin ditolak: " + e.getMessage());
+        }
         System.out.println("Budi setelah potong admin: " + b + "   (saldo tidak boleh negatif)");
 
         System.out.printf("Bunga setahun dari saldo Ani: Rp%,.2f%n",
