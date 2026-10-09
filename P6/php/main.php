@@ -14,9 +14,10 @@ function isiPenuh(Fuelable $kendaraan): void
 }
 
 $mobil = new Mobil('Toyota Avanza', 2022, 45);
-$sepeda = new Sepeda('Polygon', 2024);
+$sepeda = new Sepeda('Sepeda', 2024);
 
 echo '=== Semua Movable ===', PHP_EOL;
+// TODO 4: masukkan sepeda juga biar geraknya ikut dipamerkan.
 foreach ([$mobil, $sepeda] as $m) {
     $m->bergerak();
     printf('    kecepatan maksimum %.0f km/jam%s', $m->kecepatanMaksimum(), PHP_EOL);
@@ -24,8 +25,12 @@ foreach ([$mobil, $sepeda] as $m) {
 
 echo PHP_EOL, '=== Hanya yang Fuelable ===', PHP_EOL;
 isiPenuh($mobil);
-// Sepeda bukan Fuelable; pemanggilan ini menghasilkan TypeError.
-// isiPenuh($sepeda);
+// TODO 4: panggil fungsi untuk melihat TypeError Sepeda, lalu tangani biar demo lanjut.
+try {
+    isiPenuh($sepeda);
+} catch (TypeError $error) {
+    echo $error->getMessage(), PHP_EOL;
+}
 
 echo PHP_EOL, '=== Enum punya perilaku ===', PHP_EOL;
 foreach (TipeBahanBakar::cases() as $t) {
@@ -37,4 +42,5 @@ foreach (TipeBahanBakar::cases() as $t) {
 
 echo PHP_EOL, '=== Trait dipakai kelas yang tidak sekerabat ===', PHP_EOL;
 $mobil->log('servis berkala selesai');
+// TODO 5: uji trait juga di kelas Pesanan yang bukan turunan Kendaraan.
 (new Pesanan())->log('pesanan #1042 dibuat');

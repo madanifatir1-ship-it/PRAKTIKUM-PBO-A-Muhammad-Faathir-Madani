@@ -9,12 +9,13 @@ public interface Movable {
     double kecepatanMaksimum();
 
     /**
-    * Mengembalikan ringkasan kecepatan maksimum memakai kecepatanMaksimum().
+     * TODO 1: bikin ringkasan gerak yang santai, formatnya
+     *         "kecepatan maksimum 180 km/jam" memakai kecepatanMaksimum().
      *
      * Default method (Java 8+) menyediakan implementasi bawaan yang boleh
      * ditimpa implementornya. PHP tidak punya padanannya di interface.
      */
     default String ringkasanGerak() {
-        return String.format("kecepatan maksimum %.0f km/jam", kecepatanMaksimum());
+        return "kecepatan maksimum " + kecepatanMaksimum() + " km/jam";
     }
 }

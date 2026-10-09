@@ -4,11 +4,14 @@ public class Sepeda extends Kendaraan implements Movable {
         super(merek, tahun);
     }
 
+    // TODO 1: sepeda punya dua roda, biar sesuai bentuknya.
     @Override public int jumlahRoda() { return 2; }
 
+    // TODO 2: tampilkan cara sepeda bergerak tanpa perlu bahan bakar.
     @Override public void bergerak() {
-        System.out.printf("%s mengayuh di jalan raya%n", merek);
+        System.out.println(merek + " dikayuh santai");
     }
 
-    @Override public double kecepatanMaksimum() { return 25; }
+    // TODO 3: kembalikan kecepatan maksimum sepeda yang masuk akal.
+    @Override public double kecepatanMaksimum() { return 25.0; }
 }

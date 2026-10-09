@@ -17,9 +17,10 @@ public class Main {
 
     public static void main(String[] args) {
         Mobil mobil = new Mobil("Toyota Avanza", 2022, 45);
-        Sepeda sepeda = new Sepeda("Polygon", 2024);
+        Sepeda sepeda = new Sepeda("Sepeda", 2024);
 
         System.out.println("=== Semua Movable ===");
+        // TODO 4: ikutkan sepeda biar semua yang bisa bergerak tampil.
         for (Movable m : List.of(mobil, sepeda)) {
             m.bergerak();
             System.out.println("    " + m.ringkasanGerak());
@@ -29,8 +30,9 @@ public class Main {
         System.out.println("=== Hanya yang Fuelable ===");
         isiPenuh(mobil);
 
-        // Sepeda tidak mengimplementasikan Fuelable, jadi pemanggilan ini ditolak compiler.
-        // isiPenuh(sepeda);
+        // TODO 4: kalau penasaran, buka komentar ini untuk melihat compiler menolak Sepeda.
+        //                 Baris sengaja tetap dinonaktifkan supaya contoh utama tetap bisa dikompilasi.
+        // isiPenuh(sepeda); // Compile-time error: Sepeda bukan Fuelable.
 
         System.out.println();
         System.out.println("=== Enum punya perilaku ===");

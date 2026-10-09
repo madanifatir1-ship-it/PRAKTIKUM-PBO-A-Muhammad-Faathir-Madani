@@ -14,21 +14,21 @@ public class Mobil extends Kendaraan implements Movable, Fuelable {
 
     @Override public int jumlahRoda() { return 4; }
 
+    // TODO 1: lengkapi kontrak gerak mobil biar bisa langsung kelihatan saat dijalankan.
     @Override public void bergerak() {
-        System.out.printf("%s melaju di jalan raya%n", merek);
+        System.out.println(merek + " melaju di jalan raya");
     }
 
-    @Override public double kecepatanMaksimum() { return 180; }
+    @Override public double kecepatanMaksimum() { return 180.0; }
 
-    // Pengisian tidak boleh nol, negatif, tidak terbatas, atau melebihi kapasitas.
+    // TODO 2: isi tangki dengan aman; jumlah nol/negatif atau yang bikin luber ditolak.
     @Override public void isiBahanBakar(double jumlah) {
-        if (!Double.isFinite(jumlah) || jumlah <= 0) {
+        if (jumlah <= 0) {
             throw new IllegalArgumentException("Jumlah bahan bakar harus lebih dari 0.");
         }
         if (isiTangki + jumlah > kapasitasTangki) {
             throw new IllegalArgumentException("Pengisian melebihi kapasitas tangki.");
         }
-
         isiTangki += jumlah;
     }
 

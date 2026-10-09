@@ -12,7 +12,7 @@ public abstract class Kendaraan {
         this.tahun = tahun;
     }
 
-    /** Mengembalikan umur kendaraan, tidak boleh negatif. */
+    /** TODO 1: hitung umur kendaraan tanpa bikin hasilnya negatif. */
     public int umur(int tahunSekarang) {
         return Math.max(0, tahunSekarang - tahun);
     }
