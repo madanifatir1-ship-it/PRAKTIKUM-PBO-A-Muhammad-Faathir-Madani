@@ -1,0 +1,67 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Pegawai {
+  #nip: String
+  #nama: String
+  #gajiPokok: double
+  #Pegawai(nip: String, nama: String, gajiPokok: double)
+  +hitungGaji(): double
+  {abstract} +jenis(): String
+  +getNama(): String
+  +getNip(): String
+}
+
+class PegawaiTetap {
+  {static} #TUNJANGAN_PER_TAHUN: double
+  {static} #TUNJANGAN_MAKSIMUM: double
+  -masaKerjaTahun: int
+  +PegawaiTetap(nip: String, nama: String, gajiPokok: double, masaKerjaTahun: int)
+  +hitungGaji(): double
+  +jenis(): String
+  #getMasaKerjaTahun(): int
+}
+
+class PegawaiKontrak {
+  -bulanKontrak: int
+  +PegawaiKontrak(nip: String, nama: String, gajiPokok: double, bulanKontrak: int)
+  +jenis(): String
+  +getBulanKontrak(): int
+}
+
+class Dosen {
+  -jabatanFungsional: String
+  -tunjanganFungsional: double
+  +Dosen(nip: String, nama: String, gajiPokok: double, masaKerjaTahun: int, jabatanFungsional: String, tunjanganFungsional: double)
+  +hitungGaji(): double
+  +jenis(): String
+  +getJabatanFungsional(): String
+  +getTunjanganFungsional(): double
+}
+
+class PegawaiHarian {
+  -gajiPerHari: double
+  -hariKerja: int
+  +PegawaiHarian(nip: String, nama: String, gajiPerHari: double, hariKerja: int)
+  +hitungGaji(): double
+  +jenis(): String
+  +getGajiPerHari(): double
+  +getHariKerja(): int
+}
+
+class PegawaiParuhWaktu {
+  -gajiPerJam: double
+  -jamKerja: int
+  +PegawaiParuhWaktu(nip: String, nama: String, gajiPerJam: double, jamKerja: int)
+  +hitungGaji(): double
+  +jenis(): String
+  +getGajiPerJam(): double
+  +getJamKerja(): int
+}
+
+Pegawai <|-- PegawaiTetap
+Pegawai <|-- PegawaiKontrak
+Pegawai <|-- PegawaiHarian
+Pegawai <|-- PegawaiParuhWaktu
+PegawaiTetap <|-- Dosen
+@enduml
