@@ -1,0 +1,128 @@
+  @startuml perpustakaan-class
+title Sistem Perpustakaan — Class Diagram (Sesi 7)
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+' ─────────────────────────────────────────────────────────────
+' KERANGKA. Lengkapi setiap bagian bertanda TODO.
+' Setiap kelas di sini harus ada di kode Anda, dan sebaliknya.
+' ─────────────────────────────────────────────────────────────
+
+package model {
+
+  abstract class Koleksi {
+    - nomorInduk : String
+    - judul : String
+    - penulis : String
+    - tahun : int
+    - jumlahEksemplar : int
+    - status : StatusKoleksi
+    + {abstract} masaPinjamHari() : int
+    + {abstract} bolehDipinjam() : boolean
+    + tersedia() : boolean
+  }
+
+  ' TODO 1: turunan Koleksi; Buku 14 hari, Majalah 3 hari, Skripsi tidak dapat dipinjam.
+  class Buku {
+    + masaPinjamHari() : int
+    + bolehDipinjam() : boolean
+    + tambahBab(nomor : int, judul : String) : void
+    + getBab() : List<Bab>
+  }
+
+  class Majalah {
+    + masaPinjamHari() : int
+    + bolehDipinjam() : boolean
+  }
+
+  class Skripsi {
+    + masaPinjamHari() : int
+    + bolehDipinjam() : boolean
+  }
+
+  class Bab {
+    - nomor : int
+    - judul : String
+  }
+
+  ' TODO 2: Anggota memegang identitas dan Peminjaman mencatat tanggal serta denda.
+  class Anggota {
+    - nomorAnggota : String
+    - nama : String
+    - jenisKeanggotaan : JenisKeanggotaan
+    + getPeminjamanAktif() : List<Peminjaman>
+  }
+
+  class Peminjaman {
+    - tanggalPinjam : LocalDate
+    - tanggalJatuhTempo : LocalDate
+    - tanggalKembali : LocalDate
+    - denda : long
+    + kembalikan(tanggal : LocalDate) : long
+    + isAktif() : boolean
+  }
+
+  class Jurusan {
+    - kode : String
+    - nama : String
+  }
+
+  class Mahasiswa {
+    - nim : String
+    - nama : String
+  }
+
+  ' TODO 3: status koleksi dan jenis keanggotaan adalah enumerasi domain.
+  enum StatusKoleksi {
+    TERSEDIA
+    DIPINJAM
+    RUSAK
+    HILANG
+  }
+
+  enum JenisKeanggotaan {
+    MAHASISWA
+    DOSEN
+    ANGGOTA_KEHORMATAN
+  }
+
+  ' ── RELASI ───────────────────────────────────────────────
+  ' TODO 4: lengkapi relasi berikut. Untuk setiap relasi, tentukan
+  '         derajat keterikatannya DAN tulis multiplicity di kedua ujung.
+  '
+  '   Notasi:  *--  komposisi   o--  agregasi   -->  asosiasi   ..>  dependensi
+  '
+  ' Buku ? Bab                 -> pikirkan: bab bisa hidup tanpa buku?
+  ' Anggota ? Peminjaman       -> pikirkan: peminjaman bisa hidup tanpa anggota?
+  ' Peminjaman ? Koleksi       -> pikirkan: koleksi bisa hidup tanpa peminjaman?
+
+  ' TODO 4: multiplicity dan jenis relasi memperlihatkan kardinalitas dan kepemilikan.
+  Buku "1" *-- "0..*" Bab : terdiri atas
+  Jurusan "0..1" o-- "0..*" Mahasiswa : menaungi
+  Anggota "1" o-- "0..*" Peminjaman : riwayat
+  Peminjaman "0..*" --> "1" Koleksi : meminjam
+  Koleksi "0..*" --> "1" StatusKoleksi : berstatus
+  Anggota "0..*" --> "1" JenisKeanggotaan : memiliki jenis
+  ' TODO 5: turunan Koleksi adalah Buku, Majalah, dan Skripsi; Bab bukan turunan Koleksi.
+  Koleksi <|-- Buku
+  Koleksi <|-- Majalah
+  Koleksi <|-- Skripsi
+
+}
+
+package service {
+  class PerpustakaanService {
+    + tambahKoleksi(k : model.Koleksi) : void
+    + daftarkanAnggota(a : model.Anggota) : void
+    + pinjam(nomorAnggota : String, nomorInduk : String) : model.Peminjaman
+    + kembalikan(nomorAnggota : String, nomorInduk : String) : void
+    + cariKoleksi(nomorInduk : String) : model.Koleksi
+  }
+
+  ' TODO 6: service berasosiasi dengan model yang dikelolanya.
+  PerpustakaanService "1" --> "0..*" model.Koleksi : mengelola
+  PerpustakaanService "1" --> "0..*" model.Anggota : mendaftarkan
+}
+
+@enduml
