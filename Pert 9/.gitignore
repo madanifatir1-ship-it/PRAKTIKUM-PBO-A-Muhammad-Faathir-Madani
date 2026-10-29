@@ -1,0 +1,23 @@
+# Java / Maven
+**/target/
+target/
+*.class
+*.jar
+
+# PHP / Composer
+**/vendor/
+vendor/
+.phpunit.result.cache
+.phpunit.cache/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db

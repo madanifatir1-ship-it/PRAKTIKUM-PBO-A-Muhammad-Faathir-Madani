@@ -1,0 +1,19 @@
+﻿WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Tools/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< id.ac.univpancasila.perpustakaan:perpustakaan >------------
+[INFO] Building Sistem Perpustakaan 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.7.0:tree (default-cli) @ perpustakaan ---
+[INFO] id.ac.univpancasila.perpustakaan:perpustakaan:jar:1.0.0
+[INFO] \- com.github.freva:ascii-table:jar:1.8.0:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.721 s
+[INFO] Finished at: 2026-10-29T15:58:09+07:00
+[INFO] ------------------------------------------------------------------------

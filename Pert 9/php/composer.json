@@ -1,0 +1,23 @@
+{
+    "name": "univpancasila/perpustakaan",
+    "description": "Praktikum PBO Pertemuan 9 - Package, Namespace, dan Build Tool",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "nesbot/carbon": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Perpustakaan\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Perpustakaan\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
