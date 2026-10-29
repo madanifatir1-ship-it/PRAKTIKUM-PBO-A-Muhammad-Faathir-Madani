@@ -239,7 +239,25 @@ Pert 9/
 
 ## Proyek Java dengan Maven
 
-Persyaratan: JDK 25 dan Maven.
+Persyaratan utama: JDK 25. Maven Wrapper sudah disertakan, sehingga Maven global tidak diperlukan.
+
+### Terminal Linux/macOS atau Git Bash
+
+```bash
+cd "Pert 9/java"
+./mvnw clean compile
+./mvnw exec:java
+```
+
+### Terminal Windows PowerShell atau Command Prompt
+
+```powershell
+cd "Pert 9/java"
+.\mvnw.cmd clean compile
+.\mvnw.cmd exec:java
+```
+
+Jika Maven global sudah tersedia, perintah lama tetap dapat dipakai:
 
 ```powershell
 cd "Pert 9/java"
