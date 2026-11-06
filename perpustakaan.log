@@ -1,4 +1,0 @@
-2026-11-06T21:35:29.521445400 | IllegalArgumentException | Pilihan menu tidak boleh kosong
-2026-11-06T21:35:29.524891700 | IllegalArgumentException | ID anggota tidak boleh kosong
-2026-11-06T21:35:29.526249600 | BukuSedangDipinjamException | Buku dengan ISBN [BKU-002] berjudul "Struktur Data" sedang habis/stok tidak tersedia
-2026-11-06T21:35:29.528246200 | AnggotaTidakDitemukanException | Anggota dengan ID [X001] tidak terdaftar
