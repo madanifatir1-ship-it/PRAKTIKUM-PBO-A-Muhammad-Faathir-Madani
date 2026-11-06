@@ -1,0 +1,10 @@
+2026-11-06T20:22:20.673310600 | AnggotaTidakDitemukanException | Anggota dengan ID [ANG-X] tidak terdaftar
+2026-11-06T20:33:31.518402900 | BatasPinjamTerlampauiException | Anggota dengan ID [ANG-001] telah mencapai batas pinjam [3]
+2026-11-06T21:21:33.558990700 | AnggotaTidakDitemukanException | Anggota dengan ID [1] tidak terdaftar
+2026-11-06T21:24:37.623404 | AnggotaTidakDitemukanException | Anggota dengan ID [1] tidak terdaftar
+2026-11-06T21:32:46.161875200 | IllegalArgumentException | ID anggota tidak boleh kosong
+2026-11-06T21:35:45.905033 | IllegalArgumentException | ID anggota tidak boleh kosong
+2026-11-06T21:39:51.371938500 | AnggotaTidakDitemukanException | Anggota dengan ID [16] tidak terdaftar
+2026-11-06T21:41:26.950682400 | BukuTidakDitemukanException | Buku dengan ISBN [999] tidak ditemukan
+2026-11-06T21:41:58.488078200 | IllegalArgumentException | Pilihan menu tidak boleh kosong
+2026-11-06T21:54:38.236461 | BukuSedangDipinjamException | Buku dengan ISBN [BKU-002] berjudul "Struktur Data" sedang habis/stok tidak tersedia

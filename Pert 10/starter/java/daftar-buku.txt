@@ -1,0 +1,3 @@
+ISBN	Judul	Sisa Eksemplar
+BKU-002	Struktur Data	0
+BKU-001	Pemrograman Berorientasi Objek	2
