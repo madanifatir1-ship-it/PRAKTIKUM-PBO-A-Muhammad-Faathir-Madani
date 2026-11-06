@@ -1,0 +1,6 @@
+2026-11-06T20:32:16.383962500 | IllegalArgumentException | Pilihan menu bukan angka
+2026-11-06T20:32:16.583963200 | IllegalArgumentException | ID anggota tidak boleh kosong
+2026-11-06T20:32:16.607077200 | BukuTidakDitemukanException | Buku dengan ISBN [BKU-X] tidak ditemukan
+2026-11-06T20:32:16.609225600 | AnggotaTidakDitemukanException | Anggota dengan ID [ANG-X] tidak terdaftar
+2026-11-06T20:33:06.077948700 | IllegalArgumentException | Pilihan menu tidak tersedia
+2026-11-06T20:33:06.484735300 | BukuSedangDipinjamException | Buku dengan ISBN [BKU-001] berjudul "Pemrograman Berorientasi Objek" sedang habis/stok tidak tersedia
