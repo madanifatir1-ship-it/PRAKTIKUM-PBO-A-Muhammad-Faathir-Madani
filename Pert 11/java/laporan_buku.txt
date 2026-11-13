@@ -1,0 +1,8 @@
+LAPORAN PERPUSTAKAAN
+Buku tersedia:
+BKU-001 - Pemrograman Berorientasi Objek (S. Suryana), tersedia: 3
+BKU-003 - Pemrograman Java (S. Suryana), tersedia: 2
+Semua judul: Pemrograman Berorientasi Objek, Struktur Data, Pemrograman Java
+Jumlah judul per penulis:
+A. Nugroho: 1
+S. Suryana: 2

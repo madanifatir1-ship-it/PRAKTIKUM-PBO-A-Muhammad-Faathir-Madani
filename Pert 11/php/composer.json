@@ -1,0 +1,27 @@
+{
+    "name": "univpancasila/perpustakaan-sesi-11",
+    "description": "Praktikum PBO Pertemuan 11 - Collections, Generics, dan Pengujian",
+    "type": "project",
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Perpustakaan\\": "src/"
+        },
+        "classmap": [
+            "src/Model/Buku.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Perpustakaan\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
