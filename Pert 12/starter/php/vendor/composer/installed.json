@@ -1,0 +1,18 @@
+{
+    "packages": [
+        {
+            "name": "nesbot/carbon",
+            "version": "3.8.0",
+            "install-path": "../nesbot/carbon"
+        },
+        {
+            "name": "phpunit/phpunit",
+            "version": "11.4.0",
+            "install-path": "../phpunit/phpunit"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": [
+        "phpunit/phpunit"
+    ]
+}

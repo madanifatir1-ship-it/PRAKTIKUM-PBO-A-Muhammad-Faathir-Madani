@@ -15,7 +15,7 @@
   <properties>
     <maven.compiler.release>25</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <exec.mainClass>id.ac.univpancasila.perpustakaan.App</exec.mainClass>
+    <exec.mainClass>id.ac.univpancasila.perpustakaan.Main</exec.mainClass>
   </properties>
 
   <dependencies>
@@ -23,6 +23,11 @@
       <groupId>com.github.freva</groupId>
       <artifactId>ascii-table</artifactId>
       <version>1.8.0</version>
+    </dependency>
+    <dependency>
+      <groupId>net.datafaker</groupId>
+      <artifactId>datafaker</artifactId>
+      <version>2.4.2</version>
     </dependency>
   </dependencies>
 

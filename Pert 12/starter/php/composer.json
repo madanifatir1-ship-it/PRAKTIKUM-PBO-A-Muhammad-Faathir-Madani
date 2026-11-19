@@ -1,0 +1,22 @@
+{
+    "name": "univpancasila/perpustakaan-sesi12",
+    "description": "Sistem Perpustakaan - Sesi 12 Refactoring dengan SOLID dan Repository Pattern",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "nesbot/carbon": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Perpustakaan\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Perpustakaan\\Tests\\": "tests/"
+        }
+    }
+}

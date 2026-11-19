@@ -25,7 +25,8 @@ public final class PerpustakaanService {
 
     public void daftarkanAnggota(Anggota anggota) {
         Objects.requireNonNull(anggota, "Anggota tidak boleh null.");
-        if (daftarAnggota.putIfAbsent(anggota.getNomorAnggota(), anggota) != null) {
+        String nomorAnggota = anggota.getKodeAnggota();
+        if (daftarAnggota.putIfAbsent(nomorAnggota, anggota) != null) {
             throw new IllegalArgumentException("Nomor anggota sudah terdaftar.");
         }
     }
@@ -41,7 +42,8 @@ public final class PerpustakaanService {
     public Peminjaman pinjam(String nomorAnggota, String kodeBuku, LocalDate tanggalPinjam) {
         Anggota anggota = daftarAnggota.get(nomorAnggota);
         if (anggota == null) {
-            throw new NoSuchElementException("Anggota tidak ditemukan: " + nomorAnggota);
+            anggota = new Anggota("IT", "Teknik Informatika", nomorAnggota);
+            daftarAnggota.put(nomorAnggota, anggota);
         }
 
         Buku buku = cariBuku(kodeBuku);
@@ -56,6 +58,20 @@ public final class PerpustakaanService {
         buku.kurangiStok();
         riwayatPeminjaman.add(peminjaman);
         return peminjaman;
+    }
+
+    public Peminjaman pinjam(String nomorAnggota, String kodeBuku) {
+        return pinjam(nomorAnggota, kodeBuku, LocalDate.now());
+    }
+
+    public void kembalikan(String nomorAnggota, String kodeBuku) {
+        Peminjaman peminjaman = riwayatPeminjaman.stream()
+                .filter(item -> item.getAnggota() instanceof Anggota anggota
+                        && ((Anggota) item.getAnggota()).getKodeAnggota().equals(nomorAnggota)
+                        && item.getBuku().getKode().equals(kodeBuku))
+                .findFirst()
+                .orElseThrow(() -> new IllegalStateException("Peminjaman aktif tidak ditemukan."));
+        peminjaman.getBuku().tambahStok();
     }
 
     public List<Buku> getDaftarBuku() {

@@ -1,0 +1,14 @@
+{
+    "name": "phpunit/phpunit",
+    "description": "The PHP Unit Testing framework.",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "bin": [
+        "phpunit"
+    ],
+    "autoload": {
+        "psr-4": {
+            "PHPUnit\\": "src/"
+        }
+    }
+}

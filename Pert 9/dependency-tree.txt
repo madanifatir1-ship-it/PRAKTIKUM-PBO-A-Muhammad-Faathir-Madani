@@ -1,4 +1,12 @@
-﻿WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Tools/apache-maven-3.9.11/lib/guice-5.1.0-classes.jar)
+﻿At line:2 char:29
++ ... rt 9\java'; .\mvnw.cmd dependency:tree > '..\dependency-tree.txt' 2>& ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A term...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C
+:/Users/USER/.m2/wrapper/dists/apache-maven-3.9.11/03d7e36a140982eea48e22c1dcac01d8862b2550b2939e09a0809bbc5182a5bc/lib
+/guice-5.1.0-classes.jar)
 WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
 WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
 [INFO] Scanning for projects...
@@ -10,10 +18,14 @@ WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
 [INFO] 
 [INFO] --- dependency:3.7.0:tree (default-cli) @ perpustakaan ---
 [INFO] id.ac.univpancasila.perpustakaan:perpustakaan:jar:1.0.0
-[INFO] \- com.github.freva:ascii-table:jar:1.8.0:compile
+[INFO] +- com.github.freva:ascii-table:jar:1.8.0:compile
+[INFO] \- net.datafaker:datafaker:jar:2.4.2:compile
+[INFO]    +- org.yaml:snakeyaml:jar:2.3:compile
+[INFO]    +- com.github.curious-odd-man:rgxgen:jar:2.0:compile
+[INFO]    \- com.googlecode.libphonenumber:libphonenumber:jar:8.13.50:compile
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.721 s
-[INFO] Finished at: 2026-10-29T15:58:09+07:00
+[INFO] Total time:  0.731 s
+[INFO] Finished at: 2026-10-29T16:37:02+07:00
 [INFO] ------------------------------------------------------------------------

@@ -67,7 +67,7 @@ sesi-09/java/
 ```bash
 cd sesi-09/java
 mvn clean compile
-mvn exec:java -Dexec.mainClass=id.ac.univpancasila.perpustakaan.App
+mvn exec:java -Dexec.mainClass=id.ac.univpancasila.perpustakaan.Main
 ```
 
 > **Checkpoint —** BUILD SUCCESS, dan program berjalan dari folder target/classes.

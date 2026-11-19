@@ -1,0 +1,69 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "a8f4c9d2e1b703654819c0f2d7e4a1b3",
+    "packages": [
+        {
+            "name": "nesbot/carbon",
+            "version": "3.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "9b2a4f8c1d3e5a7091c2b4d6e8f0a1b2c3d4e5f6"
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Carbon\\": "src/Carbon/"
+                }
+            },
+            "description": "An API extension for DateTime that supports 281 different languages.",
+            "license": [
+                "MIT"
+            ]
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "phpunit/phpunit",
+            "version": "11.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "7c1e3a5b9d2f4a6c8e0b1d3f5a7c9e1b3d5f7a9c"
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "bin": [
+                "phpunit"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPUnit\\": "src/"
+                }
+            },
+            "description": "The PHP Unit Testing framework.",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.2"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}
