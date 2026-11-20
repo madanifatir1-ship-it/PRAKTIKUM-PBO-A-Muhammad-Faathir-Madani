@@ -1,0 +1,16 @@
+# Java / Maven
+java/target/
+*.class
+*.jar
+
+# PHP / Composer
+php/vendor/
+php/composer.phar
+php/laporan_buku.txt
+.phpunit.result.cache
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

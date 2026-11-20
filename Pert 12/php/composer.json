@@ -1,0 +1,26 @@
+{
+    "name": "univpancasila/perpustakaan",
+    "description": "Praktikum PBO Sesi 12 — Refactoring dengan SOLID dan Repository Pattern",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "nesbot/carbon": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Perpustakaan\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Perpustakaan\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    }
+}
