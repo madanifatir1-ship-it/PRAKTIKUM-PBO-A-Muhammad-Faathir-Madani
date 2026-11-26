@@ -4,21 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBukuRequest;
-use App\Models\Buku;
+use App\Repositories\BookRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
+    public function __construct(
+        private readonly BookRepository $bookRepository,
+    ) {}
+
     public function index(Request $request): JsonResponse
     {
-        $query = Buku::latest();
-
-        if ($request->filled('bahasa')) {
-            $query->berbahasa($request->query('bahasa'));
-        }
-
-        $buku = $query->get();
+        $bahasa = $request->filled('bahasa') ? (string) $request->query('bahasa') : null;
+        $buku = $this->bookRepository->all($bahasa);
 
         return response()->json([
             'status' => true,
@@ -28,7 +27,7 @@ class BukuController extends Controller
 
     public function store(StoreBukuRequest $request): JsonResponse
     {
-        $buku = Buku::create($request->validated());
+        $buku = $this->bookRepository->create($request->validated());
 
         return response()->json([
             'status' => true,
@@ -39,7 +38,7 @@ class BukuController extends Controller
 
     public function show(string $id): JsonResponse
     {
-        $buku = Buku::findOrFail($id);
+        $buku = $this->bookRepository->findOrFail($id);
 
         return response()->json([
             'status' => true,
@@ -49,17 +48,17 @@ class BukuController extends Controller
 
     public function update(Request $request, string $id): JsonResponse
     {
-        $buku = Buku::findOrFail($id);
+        $buku = $this->bookRepository->findOrFail($id);
 
         $validated = $request->validate([
-            'isbn' => 'required|string|max:20|unique:buku,isbn,' . $buku->id,
-            'nama_penulis' => 'required|string|max:255',
+            'isbn' => 'sometimes|required|string|max:20|unique:buku,isbn,' . $buku->id,
+            'nama_penulis' => 'sometimes|required|string|max:255',
             'title' => 'sometimes|required|string|max:255',
-            'jumlah_eksamplar' => 'required|integer|min:0',
+            'jumlah_eksamplar' => 'sometimes|required|integer|min:0',
             'bahasa' => 'sometimes|required|string|in:id,en,ar',
         ]);
 
-        $buku->update($validated);
+        $buku = $this->bookRepository->update($id, $validated);
 
         return response()->json([
             'status' => true,
@@ -70,12 +69,11 @@ class BukuController extends Controller
 
     public function destroy(string $id): JsonResponse
     {
-        $buku = Buku::findOrFail($id);
-        $buku->delete();
+        $this->bookRepository->delete($id);
 
         return response()->json([
             'status' => true,
-            'message' => 'Buku berhasil dihapus',
+            'message' => 'Data buku berhasil dihapus',
         ]);
     }
 }

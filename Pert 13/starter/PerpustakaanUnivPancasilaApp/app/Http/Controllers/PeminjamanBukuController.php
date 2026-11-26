@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\BukuTidakBolehDipinjamException;
 use App\Http\Controllers\Controller;
 use App\Models\Buku;
 use App\Models\PeminjamanBuku;
@@ -31,6 +32,13 @@ class PeminjamanBukuController extends Controller
         ]);
 
         $buku = Buku::findOrFail($validated['id_buku']);
+
+        if ($buku->status === 'rusak') {
+            throw new BukuTidakBolehDipinjamException(
+                $buku->isbn,
+                'Buku berstatus rusak dan tidak dapat dipinjam.'
+            );
+        }
 
         if ($buku->jumlah_eksamplar <= 0) {
             return response()->json([

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Repositories\BookRepository;
+use App\Repositories\EloquentBookRepository;
+use App\Repositories\InMemoryBookRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(BookRepository::class, EloquentBookRepository::class);
+        // Untuk uji Service Container (Langkah 6), ganti ke baris di bawah tanpa mengubah BukuController:
+        // $this->app->bind(BookRepository::class, InMemoryBookRepository::class);
     }
 
     /**

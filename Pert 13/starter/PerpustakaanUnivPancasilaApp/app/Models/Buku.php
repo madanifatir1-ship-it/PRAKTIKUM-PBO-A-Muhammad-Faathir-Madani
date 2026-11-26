@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+
 class Buku extends Model
 {
     use HasFactory;
@@ -19,6 +20,7 @@ class Buku extends Model
         'title',
         'jumlah_eksamplar',
         'bahasa',
+        'status',
     ];
 
     protected $casts = [

@@ -108,4 +108,27 @@ class PeminjamanBukuTest extends TestCase
         $response->assertStatus(422)
             ->assertJsonValidationErrors(['id_anggota', 'id_buku']);
     }
+
+    public function test_gagal_meminjam_buku_berstatus_rusak(): void
+    {
+        $anggota = Anggota::factory()->create();
+        $buku = Buku::factory()->create([
+            'isbn' => '978-602-9999-88-1',
+            'jumlah_eksamplar' => 5,
+            'status' => 'rusak',
+        ]);
+
+        $response = $this->postJson('/api/pinjam-buku/create', [
+            'id_anggota' => $anggota->id,
+            'id_buku' => $buku->id,
+            'tanggal_pinjam' => '2026-11-27 00:00:00',
+        ]);
+
+        $response->assertStatus(422)
+            ->assertJson([
+                'status' => false,
+                'isbn' => '978-602-9999-88-1',
+                'alasan' => 'Buku berstatus rusak dan tidak dapat dipinjam.',
+            ]);
+    }
 }
