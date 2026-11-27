@@ -44,7 +44,7 @@
 
 ## 5. Screenshot Route (`routes/api.php`)
 
-![Routes API](../../ScreenShot/routes-api.png)
+![Routes API](ScreenShot/routes-api.png)
 
 ---
 
@@ -54,52 +54,52 @@
 
 1. **GET `/api/buku/get`**
 
-   ![GET Buku](../../ScreenShot/buku-get.png)
+   ![GET Buku](ScreenShot/buku-get.png)
 
 2. **POST `/api/buku/create`**
 
-   ![POST Buku](../../ScreenShot/buku-create.png)
+   ![POST Buku](ScreenShot/buku-create.png)
 
 3. **PATCH `/api/buku/update/{id}`**
 
-   ![PATCH Buku](../../ScreenShot/buku-update.png)
+   ![PATCH Buku](ScreenShot/buku-update.png)
 
 4. **DELETE `/api/buku/delete/{id}`**
 
-   ![DELETE Buku](../../ScreenShot/buku-delete.png)
+   ![DELETE Buku](ScreenShot/buku-delete.png)
 
 ### B. Endpoint Anggota
 
 1. **GET `/api/anggota/get`**
 
-   ![GET Anggota](../../ScreenShot/anggota-get.png)
+   ![GET Anggota](ScreenShot/anggota-get.png)
 
 2. **POST `/api/anggota/create`**
 
-   ![POST Anggota](../../ScreenShot/anggota-create.png)
+   ![POST Anggota](ScreenShot/anggota-create.png)
 
 3. **PATCH `/api/anggota/update/{id}`**
 
-   ![PATCH Anggota](../../ScreenShot/anggota-update.png)
+   ![PATCH Anggota](ScreenShot/anggota-update.png)
 
 4. **DELETE `/api/anggota/delete/{id}`**
 
-   ![DELETE Anggota](../../ScreenShot/anggota-delete.png)
+   ![DELETE Anggota](ScreenShot/anggota-delete.png)
 
 ### C. Endpoint Peminjaman Buku
 
 1. **GET `/api/pinjam-buku/get`**
 
-   ![GET Peminjaman](../../ScreenShot/pinjam-get.png)
+   ![GET Peminjaman](ScreenShot/pinjam-get.png)
 
 2. **POST `/api/pinjam-buku/create`**
 
-   ![POST Peminjaman](../../ScreenShot/pinjam-create.png)
+   ![POST Peminjaman](ScreenShot/pinjam-create.png)
 
 3. **PATCH `/api/pinjam-buku/update/{id}`**
 
-   ![PATCH Peminjaman](../../ScreenShot/pinjam-update.png)
+   ![PATCH Peminjaman](ScreenShot/pinjam-update.png)
 
 4. **DELETE `/api/pinjam-buku/delete/{id}`**
 
-   ![DELETE Peminjaman](../../ScreenShot/pinjam-delete.png)
+   ![DELETE Peminjaman](ScreenShot/pinjam-delete.png)
