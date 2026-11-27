@@ -1,59 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Praktikum PBO — Pertemuan 13 (Menelusuri dan Memodifikasi Aplikasi Laravel 13)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1. **Nama - NPM:** Muhammad Faathir Madani - 4525210100
+2. **Kelas:** A
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 3. Panduan Instalasi
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Masuk ke direktori proyek Laravel:
+   ```bash
+   cd "Pert 13/starter/PerpustakaanUnivPancasilaApp"
+   ```
+2. Install seluruh dependensi PHP menggunakan Composer:
+   ```bash
+   composer install
+   ```
+3. Salin berkas konfigurasi environment `.env.example` menjadi `.env` dan generate application key:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+4. Sesuaikan konfigurasi database pada berkas `.env` (`DB_CONNECTION=sqlite` atau sesuaikan kredensial MySQL jika menggunakan XAMPP/Laragon).
+5. Jalankan migrasi database:
+   ```bash
+   php artisan migrate
+   ```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 4. Panduan Running Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+1. Jalankan server pengembangan lokal Laravel dari dalam direktori `PerpustakaanUnivPancasilaApp`:
+   ```bash
+   php artisan serve
+   ```
+2. API dapat diakses melalui alamat dasar `http://127.0.0.1:8000/api`.
+3. *(Opsional)* Jalankan pengujian otomatis (Feature & Unit Test):
+   ```bash
+   php artisan test
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 5. Screenshot Route (`routes/api.php`)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+![Routes API](../../ScreenShot/routes-api.png)
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 6. Percobaan Hasil API per Route
 
-## Contributing
+### A. Endpoint Buku
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **GET `/api/buku/get`**
 
-## Code of Conduct
+   ![GET Buku](../../ScreenShot/buku-get.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **POST `/api/buku/create`**
 
-## Security Vulnerabilities
+   ![POST Buku](../../ScreenShot/buku-create.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. **PATCH `/api/buku/update/{id}`**
 
-## License
+   ![PATCH Buku](../../ScreenShot/buku-update.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. **DELETE `/api/buku/delete/{id}`**
+
+   ![DELETE Buku](../../ScreenShot/buku-delete.png)
+
+### B. Endpoint Anggota
+
+1. **GET `/api/anggota/get`**
+
+   ![GET Anggota](../../ScreenShot/anggota-get.png)
+
+2. **POST `/api/anggota/create`**
+
+   ![POST Anggota](../../ScreenShot/anggota-create.png)
+
+3. **PATCH `/api/anggota/update/{id}`**
+
+   ![PATCH Anggota](../../ScreenShot/anggota-update.png)
+
+4. **DELETE `/api/anggota/delete/{id}`**
+
+   ![DELETE Anggota](../../ScreenShot/anggota-delete.png)
+
+### C. Endpoint Peminjaman Buku
+
+1. **GET `/api/pinjam-buku/get`**
+
+   ![GET Peminjaman](../../ScreenShot/pinjam-get.png)
+
+2. **POST `/api/pinjam-buku/create`**
+
+   ![POST Peminjaman](../../ScreenShot/pinjam-create.png)
+
+3. **PATCH `/api/pinjam-buku/update/{id}`**
+
+   ![PATCH Peminjaman](../../ScreenShot/pinjam-update.png)
+
+4. **DELETE `/api/pinjam-buku/delete/{id}`**
+
+   ![DELETE Peminjaman](../../ScreenShot/pinjam-delete.png)
